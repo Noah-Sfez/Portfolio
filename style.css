@@ -1,0 +1,175 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    text-decoration: none;
+    color: black;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    background-color: #0B2545;
+    height: 200vh;
+    margin: 0;
+    height: 200vh;
+}
+p{
+    color: #EEF4ED;
+    font-size: 1.3vw;
+}
+
+hr{
+    margin: 0 10%;
+}
+
+/*---------------HEADER---------------*/
+header{
+    height: 100vh;
+    background-image: url(./image/Bande-yellow-flou.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.grid-header{
+    width: 100%;
+}
+
+.btn {
+    margin-left: 15%;
+    color: #B24C63;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #B24C63;
+    padding: 1% 2%;
+    font-size: 1.2vw;
+    font-weight: bold;
+    background: transparent;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+}
+.btn:hover {
+    color: white;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: #B24C63;
+    z-index: -1;
+    transition: all 1s;
+}
+.btn:hover::before {
+    width: 160%;
+}
+
+.banner-title{
+    font-size: 8vw;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(./image/video-vague-couleur.gif);
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    margin-bottom: 2%;
+    margin-left: 10%;
+}
+
+header h2{
+    font-size: 3vw;
+    color: #EEF4ED;
+    margin-left: 15%;
+    margin-bottom: 5%;
+}
+
+
+/*-----------MAIN--------------*/
+
+.slide-in{
+    margin-left: 12%;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out,
+    opacity 1s ease-in-out;
+}
+.slide-in h2{
+    font-size: 7vw;
+    color: rgba(240, 248, 255, 0);
+    -webkit-text-stroke: 1px rgb(247, 206, 71); /* Bordure de 2px de large en noir (pour les navigateurs WebKit) */
+    color: rgba(255, 255, 255, 0); /* Couleur du texte */
+    display: inline;
+}
+.slide-in.active {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+
+.projet-aeklys{
+    margin: 8% 10%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.perspective-container {
+    perspective: 800px; /* Définit la distance de la perspective */
+}
+.perspective-container video{
+    width: 90%;
+    grid-column: 2;
+    transform: rotateY(-20deg); /* Appliquez une rotation en Y pour la perspective */
+    box-shadow: 15px 10px 20px rgba(0, 0, 0, 0.7);
+    border: 4px solid black;
+}
+.texte-aeklys{
+    display: grid;
+    grid-column: 1;
+    align-items: center;
+}
