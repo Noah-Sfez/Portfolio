@@ -108,6 +108,21 @@ header{
     width: 160%;
 }
 
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
 .banner-title{
     font-size: 8vw;
     font-family: Arial, Helvetica, sans-serif;
@@ -120,7 +135,17 @@ header{
     color: transparent;
     margin-bottom: 2%;
     margin-left: 10%;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;  /* initial width */
+    animation: typing 4s steps(40, end) forwards,
+             blink 0.5s step-end infinite;
 }
+.banner-title::after {
+    content: "";
+    display: inline-block;
+    animation: blink 1s infinite;
+  }
 
 header h2{
     font-size: 3vw;
@@ -294,3 +319,156 @@ header h2{
         transform: translateY(100%); /* Restez en bas */
     }
 }
+
+/*----------------PROJET D'AXE-------------*/
+
+.projet-axe{
+    margin: 5% 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 80%;
+}
+
+.perspective-container.axe video{
+    margin: 9% 0;
+    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.7);
+    width: 90%;
+    border: 4px solid black;
+    grid-column: 2/3;
+    transform: rotateY(-20deg);
+    transition: 0.5s ease;
+}
+
+.perspective-container.axe video:hover{
+    transform: rotateY(0deg);
+    width: 110%;
+    box-shadow: 3px 20px 20px rgba(0, 0, 0, 0.7);
+}
+
+.axe{
+    opacity: 0;
+    transform: translateX(200%);
+    transition: transform 1s ease-in-out,
+    opacity 1s ease-in-out;
+}
+
+.axe.active{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.axe-anim{
+    grid-column: 1/3;
+    display: grid;
+    align-items: center;
+}
+.texte-axe{
+    display: grid;
+    align-items: center;
+}
+
+.axe-anim h2{
+    font-size: 2.6vw;
+    color: #eef4ed00;
+    -webkit-text-stroke: 1px #EEF4ED; /* Bordure de 2px de large en noir (pour les navigateurs WebKit) */
+    display: inline-block;
+    animation: defilement 10s linear infinite;
+}
+
+@keyframes defilement {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    60%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+/*-------------NOSA COACH--------------*/
+
+.projet-nosa{
+    margin: 8% 10%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.perspective-container {
+    perspective: 800px; /* Définit la distance de la perspective */
+}
+.perspective-container.nosa video{
+    width: 90%;
+    grid-column: 1;
+    transform: rotateY(20deg); /* Appliquez une rotation en Y pour la perspective */
+    box-shadow: -15px 20px 20px rgba(0, 0, 0, 0.7);
+    border: 4px solid black;
+    transition: 0.5s ease;
+}
+.perspective-container.nosa video:hover{
+    transform: rotateY(0deg);
+    width: 110%;
+    box-shadow: -3px 20px 20px rgba(0, 0, 0, 0.7);
+}
+.nosa{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out,
+    opacity 1s ease-in-out;
+}
+.nosa.active {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.texte-nosa{
+    margin-left: 20%;
+    display: grid;
+    grid-column: 2;
+    align-items: center;
+}
+
+.complex-animated-title {
+    color: initial; /* Votre couleur initiale */
+    opacity: 0;
+    text-shadow: 0px 0px 0px #B24C63;
+    font-size: 3vw;
+    animation: complexColorChange 5s infinite alternate, fadeIn 5s 1 forwards;
+}
+  
+@keyframes complexColorChange {
+    0% {
+      color: #EEF4ED; /* Votre couleur initiale */
+      text-shadow: 0px 0px 0px #B24C63;
+    }
+    50% {
+      color: #B24C63;
+      text-shadow: 4px 4px 10px #B24C63;
+    }
+    100% {
+      color: #EEF4ED; /* Votre couleur initiale */
+      text-shadow: -4px -4px 10px #B24C63;
+    }
+}
+  
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.texte-nosa a{
+    color: rgb(247, 206, 71);
+}
+  
+  

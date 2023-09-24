@@ -30,3 +30,25 @@ window.addEventListener('scroll', () => {
         mouseNewsletter.classList.add('active');
     }
 });
+
+const axeNewsletter = document.querySelector('.axe');
+
+window.addEventListener('scroll', () => {
+    const { scrollTop, clientHeight } = document.documentElement;
+    const topElementAxeToTopViewport = axeNewsletter.getBoundingClientRect().top;
+
+    if (topElementAxeToTopViewport <= clientHeight * 0.6) {
+        axeNewsletter.classList.add('active');
+    }
+});
+
+const nosaNewsletter = document.querySelector('.nosa');
+
+window.addEventListener('scroll', () => {
+    const { scrollTop, clientHeight } = document.documentElement;
+    const topElementNosaToTopViewport = nosaNewsletter.getBoundingClientRect().top;
+
+    if (topElementNosaToTopViewport <= clientHeight * 0.6) {
+        nosaNewsletter.classList.add('active');
+    }
+});
