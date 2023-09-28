@@ -28,6 +28,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+html{
+    scroll-behavior: smooth;
+}
 ol, ul {
 	list-style: none;
 }
@@ -277,7 +280,7 @@ header h2{
 .word.jaune{
     font-size: 2.6vw;
     color: rgb(247, 206, 71);
-    -webkit-text-stroke: 1px rgb(247, 206, 71); /* Bordure de 2px de large en noir (pour les navigateurs WebKit) */
+    -webkit-text-stroke: 1px #f7ce47; /* Bordure de 2px de large en noir (pour les navigateurs WebKit) */
     display: inline;
 }
 .container {
@@ -471,4 +474,51 @@ header h2{
     color: rgb(247, 206, 71);
 }
   
+
+/*-----------FOOTER-----------*/
+
+
+footer{
+    background-image: url(./image/layered-waves-haikei\ \(1\).svg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    display: grid;
+    justify-items: center;
+}
+.myfooter {
+    opacity: 0; /* Initial state */
+    transition: opacity 2s ease;
+}
+.myfooter.active{
+    opacity: 1;
+}
   
+footer > h2{
+    font-size: 3vw;
+    margin-top: 5%;
+    color: #EEF4ED;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.social-icons a{
+    width: 5%;
+    margin-left: 2%;
+    margin-bottom: 20%;
+}
+.linkedin{
+    width: 100%;
+}
+.insta{
+    width: 100%;
+}
+.github{
+    width: 100%;
+}
+.mail{
+    width: 100%;
+}

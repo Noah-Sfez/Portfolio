@@ -1,0 +1,5 @@
+@media screen and (max-width: 900px){
+    footer{
+        background-image: url(./image/layered-waves-haikei-responsive.svg);
+    }
+}

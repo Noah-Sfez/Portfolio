@@ -52,3 +52,15 @@ window.addEventListener('scroll', () => {
         nosaNewsletter.classList.add('active');
     }
 });
+
+
+const footerNewsletter = document.querySelector('.myfooter');
+
+window.addEventListener('scroll', () => {
+    const { scrollTop, clientHeight } = document.documentElement;
+    const topElementFooterToTopViewport = footerNewsletter.getBoundingClientRect().top;
+
+    if (topElementFooterToTopViewport <= clientHeight * 0.6) {
+        footerNewsletter.classList.add('active');
+    }
+});
