@@ -59,8 +59,14 @@ const footerNewsletter = document.querySelector('.myfooter');
 window.addEventListener('scroll', () => {
     const { scrollTop, clientHeight } = document.documentElement;
     const topElementFooterToTopViewport = footerNewsletter.getBoundingClientRect().top;
-
-    if (topElementFooterToTopViewport <= clientHeight * 0.6) {
-        footerNewsletter.classList.add('active');
+    if (window.innerWidth < 900) {
+        if (topElementFooterToTopViewport <= clientHeight * 0.8) {
+            footerNewsletter.classList.add('active');
+        }
+    } else{
+        if (topElementFooterToTopViewport <= clientHeight * 0.6) {
+            footerNewsletter.classList.add('active');
+        }
     }
+    
 });

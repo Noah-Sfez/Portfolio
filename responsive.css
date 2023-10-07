@@ -1,5 +1,11 @@
 @media screen and (max-width: 900px){
+    header{
+        height: 80vh;
+    }
     footer{
         background-image: url(./image/layered-waves-haikei-responsive.svg);
+        height: 26vh;
+        opacity: 1;
     }
+    
 }
